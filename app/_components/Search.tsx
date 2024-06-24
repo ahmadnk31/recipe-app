@@ -38,6 +38,7 @@ export default function SearchRecipe(){
     return(
         <main className="mx-auto my-4 container ">
             <form 
+            className="max-sm:m-4"
                 onSubmit={handleSearch}
                 
             >
