@@ -4,6 +4,7 @@
 import Link from "next/link"
 import useSWR from "swr"
 import Image from "next/image"
+import Skeleton from "@/app/_components/Skeleton"
 
 type Recipe={
     params:{
@@ -16,7 +17,9 @@ export default function Recipe({
 }:Recipe){
     const fetcher = (url:string) => fetch(url).then(res => res.json())
     const {data,error,isLoading}=useSWR(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${recipe}`, fetcher);
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div>
+        <Skeleton/>
+    </div>
     if (error) return <div>Error...</div>
     return(
         <main className="container mx-auto my-8">

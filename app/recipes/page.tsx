@@ -3,13 +3,16 @@
 import Link from "next/link";
 import useSWR from "swr"
 import Image from "next/image"
+import Skeleton from "../_components/Skeleton";
 
 
 export default function Recipes(){
     const fetcher = (url:string) => fetch(url).then(res => res.json())
     const {data,error,isLoading}=useSWR("https://www.themealdb.com/api/json/v1/1/categories.php", fetcher);
     console.log(data);
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div>
+        <Skeleton/>
+    </div>
     if (error) return <div>Error...</div>
     return(
         <main className="container mx-auto my-8 ">

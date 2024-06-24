@@ -7,7 +7,6 @@ import useSWR from "swr";
 
 
 export default function SearchRecipe(){
-    const [display,setDisplay]=useState(false);
     const mealRef=useRef(null);
     const [name,setName]=useState("");
     const [meal,setMeal]=useState([]);
@@ -36,9 +35,9 @@ export default function SearchRecipe(){
     
 
     return(
-        <main className="mx-auto my-4 container ">
+        <main className="mx-auto my-4 container w-full">
             <form 
-            className="max-sm:m-4"
+            className="max-sm:mx-4 w-auto flex gap-4"
                 onSubmit={handleSearch}
                 
             >
@@ -48,9 +47,9 @@ export default function SearchRecipe(){
                     placeholder="search"
                     value={name}
                     onChange={(e)=>setName(e.target.value)}
-                    className="border p-2 rounded-md shadow-md mr-4 text-black"
+                    className="border p-2 w-full box-border rounded-md shadow-md text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 ></input>
-                <input type="submit" value="search" className="bg-blue-500 text-white p-2 rounded-md shadow-md cursor-pointer"/>
+                <input type="submit" value="search" className="bg-orange-500 text-white p-2 rounded-md shadow-md cursor-pointer box-border focus:ring-2 focus:ring-orange-300"/>
             </form>
            
             {
@@ -61,6 +60,7 @@ export default function SearchRecipe(){
                      <Link
                      
                      ref={mealRef}
+                     onClick={()=>setName("")}
                       href={{
                          pathname: `/recipes/${meal.strCategory}/${meal.idMeal}`,
                          query: { recipe: meal.strCategory, id: meal.idMeal },
