@@ -27,7 +27,7 @@ export default function Recipes(){
                    }}>
                     <div className="p-4 rounded bg-orange-500 flex flex-col gap-4 justify-center">
                     <h2 className="text-white text-lg">{category.strCategory}</h2>
-                    <Image alt={meal.strMeal} src={category.strCategoryThumb} className="object-cover rounded"/>
+                    <Image alt={category.strMeal} src={category.strCategoryThumb} className="object-cover rounded"/>
                    </div>
                    </Link>
                 ))
