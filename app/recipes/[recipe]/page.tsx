@@ -29,7 +29,7 @@ export default function Recipe({
             <div
                 className="
                 
-                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                grid grid-cols-2 lg:grid-cols-3 gap-4"
             >
             {
                 data.meals.map((meal:any)=>(
@@ -41,7 +41,7 @@ export default function Recipe({
                     }} key={meal.idMeal}>
                         <div className="p-4 rounded hover:ring-white hover:ring-1 bg-orange-500 flex flex-col gap-4 justify-center">
                         <h2 className="text-white text-lg">{meal.strMeal}</h2> 
-                        <Image alt={meal.strMeal} width="1000" height="1000" src={meal.strMealThumb} className="object-cover rounded"/>
+                        <Image alt={meal.strMeal} width="1000" height="1000" src={meal.strMealThumb} className="object-cover rounded h-auto"/>
                     </div>
                     </Link>
                 ))

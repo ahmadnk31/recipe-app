@@ -17,7 +17,7 @@ export default function Recipes(){
                 Back
             </Link>
             <h1 className="mb-4">welcome to recipes page</h1>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 max-md:grid-cols-2">
             {
                 data.categories.map((category:any)=>(
                     
