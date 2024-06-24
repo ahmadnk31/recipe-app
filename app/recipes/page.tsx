@@ -21,7 +21,9 @@ export default function Recipes(){
             {
                 data.categories.map((category:any)=>(
                     
-                   <Link href={{
+                   <Link
+                   key={category.idCategory}
+                    href={{
                     pathname: `/recipes/${category.strCategory}`,
                     query: { recipe: category.strCategory },
                    }}>

@@ -33,7 +33,10 @@ export default function Recipe({
             >
             {
                 data.meals.map((meal:any)=>(
-                    <Link href={{
+                    <Link
+                
+                    
+                     href={{
                         pathname: `/recipes/${recipe}/${meal.idMeal}`,
                         query: { recipe: recipe, id: meal.idMeal },
                     }} key={meal.idMeal}>
