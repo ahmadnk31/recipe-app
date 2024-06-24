@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import useSWR from "swr"
+import Image from "next/image"
 
 
 export default function Recipes(){
@@ -26,7 +27,7 @@ export default function Recipes(){
                    }}>
                     <div className="p-4 rounded bg-orange-500 flex flex-col gap-4 justify-center">
                     <h2 className="text-white text-lg">{category.strCategory}</h2>
-                    <img src={category.strCategoryThumb} className="object-cover rounded"/>
+                    <Image alt={meal.strMeal} src={category.strCategoryThumb} className="object-cover rounded"/>
                    </div>
                    </Link>
                 ))

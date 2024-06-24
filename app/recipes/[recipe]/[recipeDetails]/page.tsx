@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import useSWR from "swr"
+import Image from "next/image"
 type RecipeDetailsParams = {
     params:{
         recipe:string,
@@ -37,7 +38,7 @@ export default function RecipeDetails({
                     className="flex gap-8 max-sm:flex-col  max-sm:items-center max-sm:justify-center max-sm:gap-4 max-sm:md:mb-4 max-sm:md:px-4 max-sm:md:py-2 max-sm:md:rounded-md max-sm:md:shadow-md max-sm:md:bg-gray-100 max-sm:md:w-full max-sm:md:h-full max-sm:md:overflow-hidden max-sm:md:gap-4 max-sm:md:grid"
                      key={meal.idMeal}>
                        
-                        <img src={meal.strMealThumb} className="object-cover rounded h-96"/>
+                        <Image alt={meal.strMeal}  src={meal.strMealThumb} className="object-cover rounded h-96"/>
                         <div className="max-sm:mx-6">
                         <h1 className="text-3xl font-semibold mb-2">{meal.strMeal}</h1>
                         <h2 className="text-xl font-semibold">Ingredients</h2>

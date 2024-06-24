@@ -3,6 +3,7 @@
 
 import Link from "next/link"
 import useSWR from "swr"
+import Image from "next/image"
 
 type Recipe={
     params:{
@@ -38,7 +39,7 @@ export default function Recipe({
                     }} key={meal.idMeal}>
                         <div className="p-4 rounded bg-orange-500 flex flex-col gap-4 justify-center">
                         <h2 className="text-white text-lg">{meal.strMeal}</h2>
-                        <img src={meal.strMealThumb} className="object-cover rounded"/>
+                        <Image alt={meal.strMeal} src={meal.strMealThumb} className="object-cover rounded"/>
                     </div>
                     </Link>
                 ))
