@@ -34,15 +34,14 @@ export default function Recipe({
             {
                 data.meals.map((meal:any)=>(
                     <Link
-                
-                    
+                    className="grid grid-rows-subgrid  rounded-md shadow-md"
                      href={{
                         pathname: `/recipes/${recipe}/${meal.idMeal}`,
                         query: { recipe: recipe, id: meal.idMeal },
                     }} key={meal.idMeal}>
-                        <div className="p-4 rounded bg-orange-500 flex flex-col gap-4 justify-center">
-                        <h2 className="text-white text-lg">{meal.strMeal}</h2>
-                        <Image alt={meal.strMeal} src={meal.strMealThumb} className="object-cover rounded"/>
+                        <div className="p-4 rounded hover:ring-white hover:ring-1 bg-orange-500 flex flex-col gap-4 justify-center">
+                        <h2 className="text-white text-lg">{meal.strMeal}</h2> 
+                        <Image alt={meal.strMeal} width="1000" height="1000" src={meal.strMealThumb} className="object-cover rounded"/>
                     </div>
                     </Link>
                 ))

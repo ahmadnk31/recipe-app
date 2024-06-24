@@ -1,23 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    webpack5: true,
     images: {
-        domains: ['https://www.themealdb.com/api.php', 'https://www.themealdb.com/images/ingredients/'],
-    },
-    async headers() {
-        return [
+       remotePatterns:[
         {
-            source: '/(.*)',
-            headers: [
-            {
-                key: 'X-Frame-Options',
-                value: 'DENY',
-            },
-            ],
-        },
-        ];
+            protocol: 'https',
+            hostname: 'www.themealdb.com',
+            port: '',
+            pathname: '/images/media/meals/*',
+        },{
+            protocol: 'https',
+            hostname: 'www.themealdb.com',
+            port: '',
+            pathname: '/images/category/*',
+        }
+       ]
     },
+    
 };
 
 export default nextConfig;
